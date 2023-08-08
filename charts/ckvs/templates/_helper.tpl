@@ -28,9 +28,3 @@
 {{- end }}
 {{- end -}}
 
-{{/*
-* Dump msg with variable
-*/}}
-{{- define "failVarDump" -}}
-{{- . | mustToPrettyJson | printf "\n%s" | fail }}
-{{- end -}}
