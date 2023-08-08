@@ -18,6 +18,7 @@
 {{- $fwMinor := add $version.Minor 3 }}
 {{- printf "%d.%d - %d.%d" $version.Major $bwMinor $version.Major $fwMinor }}
 {{- end -}}
+
 {{/*
 * Return version valid or not
 */}}
@@ -27,3 +28,9 @@
 {{- end }}
 {{- end -}}
 
+{{/*
+* Dump msg with variable
+*/}}
+{{- define "failVarDump" -}}
+{{- . | mustToPrettyJson | printf "\n%s" | fail }}
+{{- end -}}

@@ -1,4 +1,4 @@
 {{- if not (include "isKubernetesVersionValid" .) }}
-{{- fail "Kubernetes Version is not supported" }}
+{{- printf "\nThe RUNNING Kubernetes Version %s is not supported:\n\t Supported Version of this release: %s\n\t CNF Kubernetes Version Skew Policy (N-7 - N+3): %s" (include "k8sver.major.minor" .) .Values.qualifiedKubernetesVersion (include "compatibilityKubernetesVersionRange" .) | fail }}
 {{- end }}
 
