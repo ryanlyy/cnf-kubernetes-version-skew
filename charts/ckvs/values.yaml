@@ -1,0 +1,2 @@
+#Kubernetes version qualified by this CNF release
+qualifiedKubernetesVersion: "1.40"
